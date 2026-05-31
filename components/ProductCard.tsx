@@ -4,15 +4,24 @@ import { useState } from "react";
 import Image from "next/image";
 import { ShoppingCart, ChevronDown } from "lucide-react";
 import { Produto } from "@/lib/produtos";
+import { useCart } from "@/lib/cart-context";
 
 interface ProductCardProps {
   produto: Produto;
 }
 
 export default function ProductCard({ produto }: ProductCardProps) {
+  const { adicionar } = useCart();
   const [variedadeSelecionada, setVariedadeSelecionada] = useState(
     produto.variedade ? produto.variedade[0] : undefined
   );
+  const [adicionado, setAdicionado] = useState(false);
+
+  const handleAdicionar = () => {
+    adicionar(produto, variedadeSelecionada);
+    setAdicionado(true);
+    setTimeout(() => setAdicionado(false), 1000);
+  };
 
   const precoFormatado = new Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -74,9 +83,12 @@ export default function ProductCard({ produto }: ProductCardProps) {
           </div>
         )}
 
-        <button className="mt-auto w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#FF3669] text-white font-semibold text-sm hover:bg-[#E62E5C] active:scale-[0.98] transition-all">
+        <button
+          onClick={handleAdicionar}
+          className="mt-auto w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#E8A4B8] text-[#003049] font-semibold text-sm hover:bg-[#d994a8] active:scale-[0.98] transition-all"
+        >
           <ShoppingCart className="h-4 w-4" />
-          Adicionar ao Carrinho
+          {adicionado ? "Adicionado ✓" : "Adicionar ao Carrinho"}
         </button>
       </div>
     </div>

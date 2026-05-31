@@ -16,10 +16,12 @@ export default function ProductCard({ produto }: ProductCardProps) {
     produto.variedade ? produto.variedade[0] : undefined
   );
   const [adicionado, setAdicionado] = useState(false);
+  const [quantidade, setQuantidade] = useState(1);
 
   const handleAdicionar = () => {
-    adicionar(produto, variedadeSelecionada);
+    adicionar(produto, variedadeSelecionada, quantidade);
     setAdicionado(true);
+    setQuantidade(1);
     setTimeout(() => setAdicionado(false), 1000);
   };
 
@@ -82,6 +84,29 @@ export default function ProductCard({ produto }: ProductCardProps) {
             </div>
           </div>
         )}
+
+        <div className="mb-3 flex items-center justify-between gap-2">
+          <span className="text-xs font-medium text-[#669BBC] uppercase tracking-wide">Quantidade</span>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setQuantidade((q) => Math.max(1, q - 1))}
+              className="w-7 h-7 rounded-full bg-[#FDF0D5] text-[#003049] font-bold hover:bg-[#E8A4B8] transition-colors flex items-center justify-center text-base leading-none"
+              aria-label="Diminuir quantidade"
+            >
+              −
+            </button>
+            <span className="w-6 text-center font-semibold text-[#003049] text-sm">
+              {quantidade}
+            </span>
+            <button
+              onClick={() => setQuantidade((q) => q + 1)}
+              className="w-7 h-7 rounded-full bg-[#FDF0D5] text-[#003049] font-bold hover:bg-[#E8A4B8] transition-colors flex items-center justify-center text-base leading-none"
+              aria-label="Aumentar quantidade"
+            >
+              +
+            </button>
+          </div>
+        </div>
 
         <button
           onClick={handleAdicionar}

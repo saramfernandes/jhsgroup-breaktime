@@ -11,7 +11,7 @@ interface ItemCarrinho {
 
 interface CartContextType {
   itens: ItemCarrinho[];
-  adicionar: (produto: Produto, variedade?: string) => void;
+  adicionar: (produto: Produto, variedade?: string, quantidade?: number) => void;
   remover: (produtoId: number, variedade?: string | null) => void;
   atualizarQuantidade: (
     produtoId: number,
@@ -28,7 +28,7 @@ const CartContext = createContext<CartContextType | null>(null);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [itens, setItens] = useState<ItemCarrinho[]>([]);
 
-  const adicionar = (produto: Produto, variedade?: string) => {
+  const adicionar = (produto: Produto, variedade?: string, quantidade: number = 1) => {
     const variedadeNorm = variedade ?? null;
     setItens((prev) => {
       const existente = prev.find(
@@ -38,11 +38,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (existente) {
         return prev.map((item) =>
           item.produto.id === produto.id && item.variedade === variedadeNorm
-            ? { ...item, quantidade: item.quantidade + 1 }
+            ? { ...item, quantidade: item.quantidade + quantidade }
             : item
         );
       }
-      return [...prev, { produto, variedade: variedadeNorm, quantidade: 1 }];
+      return [...prev, { produto, variedade: variedadeNorm, quantidade }];
     });
   };
 

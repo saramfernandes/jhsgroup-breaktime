@@ -92,6 +92,15 @@ export default function CarrinhoPage() {
         ))}
       </div>
 
+      <div className="flex justify-start mb-4">
+        <Link
+          href="/"
+          className="text-sm text-[#669BBC] hover:text-[#003049] transition-colors font-medium flex items-center gap-1"
+        >
+          ← Adicionar mais itens
+        </Link>
+      </div>
+
       <div className="bg-[#FFF9EE] rounded-2xl border border-[#FDF0D5] shadow-sm p-6 mb-6">
         <div className="flex justify-between items-center">
           <span className="font-serif text-xl font-bold text-[#003049]">Total</span>

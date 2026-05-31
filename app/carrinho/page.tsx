@@ -9,11 +9,6 @@ const formatarPreco = (valor: number) =>
 export default function CarrinhoPage() {
   const { itens, remover, atualizarQuantidade, limpar, total } = useCart();
 
-  const handleFinalizar = () => {
-    alert("Em breve! ☕");
-    limpar();
-  };
-
   if (itens.length === 0) {
     return (
       <div className="max-w-3xl mx-auto px-4 py-20 text-center">
@@ -113,12 +108,12 @@ export default function CarrinhoPage() {
         >
           Limpar carrinho
         </button>
-        <button
-          onClick={handleFinalizar}
-          className="px-6 py-3 rounded-xl bg-[#E8A4B8] text-[#003049] font-bold hover:bg-[#d994a8] active:scale-[0.98] transition-all"
+        <Link
+          href="/checkout"
+          className="px-6 py-3 rounded-xl bg-[#E8A4B8] text-[#003049] font-bold hover:bg-[#d994a8] active:scale-[0.98] transition-all text-center"
         >
           Finalizar Compra
-        </button>
+        </Link>
       </div>
     </div>
   );

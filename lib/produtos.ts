@@ -15,10 +15,10 @@ export const produtos: Produto[] = [
     categoria: "Confeitaria",
     preco: 45.0,
     variedade: ["Chocolate", "Morango"],
-    imagem: "/assets/produtos/bolochocolate.png",
+    imagem: "assets/produtos/bolochocolate.png",
     imagensVariedade: {
-      Chocolate: "/assets/produtos/bolochocolate.png",
-      Morango: "/assets/produtos/bolomorango.png",
+      Chocolate: "assets/produtos/bolochocolate.png",
+      Morango: "assets/produtos/bolomorango.png",
     },
   },
   {
@@ -27,7 +27,7 @@ export const produtos: Produto[] = [
     categoria: "Confeitaria",
     preco: 12.0,
     variedade: ["Brigadeiro", "Beijinho", "Casadinho"],
-    imagem: "/assets/produtos/doces.png",
+    imagem: "assets/produtos/doces.png",
   },
   {
     id: 3,
@@ -55,14 +55,14 @@ export const produtos: Produto[] = [
     nome: "Chocolate Quente",
     categoria: "Bebidas",
     preco: 16.0,
-    imagem: "/assets/produtos/",
+    imagem: "/assets/produtos/chocolatequente.png",
   },
   {
     id: 7,
     nome: "Cuca de Doce de Leite",
     categoria: "Confeitaria",
     preco: 18.0,
-    imagem: "/assets/produtos/boloamendoim.png",
+    imagem: "/assets/produtos/cucadocedeleite.png",
   },
   {
     id: 8,
@@ -76,6 +76,6 @@ export const produtos: Produto[] = [
     nome: "Café Expresso",
     categoria: "Bebidas",
     preco: 7.0,
-    imagem: "/assets/produtos/",
+    imagem: "assets/produtos/cafeexpresso.png",
   },
 ];

@@ -36,8 +36,8 @@ export default function ProductCard({ produto }: ProductCardProps) {
       : produto.imagem;
 
   return (
-    <div className="bg-[#FFF9EE] rounded-2xl border border-[#FDF0D5] shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
-      <div className="relative w-full aspect-[4/3] bg-[#FDF0D5] rounded-t-2xl overflow-hidden">
+    <div className="bg-white rounded-2xl border border-[#E5E7EB] shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+      <div className="relative w-full aspect-[4/3] bg-white rounded-t-2xl overflow-hidden">
         <Image
           src={imagemAtual}
           alt={produto.nome}
@@ -90,7 +90,7 @@ export default function ProductCard({ produto }: ProductCardProps) {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setQuantidade((q) => Math.max(1, q - 1))}
-              className="w-7 h-7 rounded-full bg-[#FDF0D5] text-[#003049] font-bold hover:bg-[#E8A4B8] transition-colors flex items-center justify-center text-base leading-none"
+              className="w-7 h-7 rounded-full bg-gray-100 text-[#003049] font-bold hover:bg-[#E8A4B8] transition-colors flex items-center justify-center text-base leading-none"
               aria-label="Diminuir quantidade"
             >
               −
@@ -100,7 +100,7 @@ export default function ProductCard({ produto }: ProductCardProps) {
             </span>
             <button
               onClick={() => setQuantidade((q) => q + 1)}
-              className="w-7 h-7 rounded-full bg-[#FDF0D5] text-[#003049] font-bold hover:bg-[#E8A4B8] transition-colors flex items-center justify-center text-base leading-none"
+              className="w-7 h-7 rounded-full bg-gray-100 text-[#003049] font-bold hover:bg-[#E8A4B8] transition-colors flex items-center justify-center text-base leading-none"
               aria-label="Aumentar quantidade"
             >
               +

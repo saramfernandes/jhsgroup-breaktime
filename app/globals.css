@@ -1,3 +1,8 @@
+@import "../components/header/header.styles.css";
+@import "../components/footer/footer.styles.css";
+@import "../components/product-card/product-card.styles.css";
+@import "../lib/cart-context/cart-context.styles.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

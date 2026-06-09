@@ -1,0 +1,11 @@
+.footer {
+  @apply w-full bg-[#FFF9EE] border-t border-[#FDF0D5] py-6 mt-auto;
+}
+
+.footer-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center;
+}
+
+.footer-text {
+  @apply text-sm text-[#003049];
+}

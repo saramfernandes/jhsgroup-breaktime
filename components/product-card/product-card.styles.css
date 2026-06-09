@@ -1,0 +1,75 @@
+.product-card {
+  @apply bg-white rounded-2xl border border-[#E5E7EB] shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col;
+}
+
+.product-card-image-container {
+  @apply relative w-full aspect-[4/3] bg-white rounded-t-2xl overflow-hidden;
+}
+
+.product-card-image {
+  @apply object-cover;
+}
+
+.product-card-body {
+  @apply p-4 flex flex-col flex-1;
+}
+
+.product-card-category-container {
+  @apply mb-2;
+}
+
+.product-card-category {
+  @apply text-xs font-medium text-[#669BBC] uppercase tracking-wide;
+}
+
+.product-card-title {
+  @apply font-serif text-lg font-bold text-[#003049] mb-1;
+}
+
+.product-card-price {
+  @apply text-[#003049] font-semibold text-xl mb-4;
+}
+
+.product-card-variedade-container {
+  @apply mb-4 relative;
+}
+
+.product-card-select-wrapper {
+  @apply relative;
+}
+
+.product-card-select {
+  @apply w-full appearance-none px-4 py-2.5 pr-10 rounded-xl bg-white border border-[#E5E7EB] text-[#003049] text-sm font-medium hover:border-[#669BBC] focus:border-[#669BBC] focus:outline-none focus:ring-2 focus:ring-[#669BBC]/20 transition-colors cursor-pointer;
+}
+
+.product-card-select-icon {
+  @apply pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#669BBC];
+}
+
+.product-card-quantity-container {
+  @apply mb-3 flex items-center justify-between gap-2;
+}
+
+.product-card-quantity-label {
+  @apply text-xs font-medium text-[#669BBC] uppercase tracking-wide;
+}
+
+.product-card-quantity-controls {
+  @apply flex items-center gap-2;
+}
+
+.product-card-btn-quantity {
+  @apply w-7 h-7 rounded-full bg-gray-100 text-[#003049] font-bold hover:bg-[#E8A4B8] transition-colors flex items-center justify-center text-base leading-none;
+}
+
+.product-card-quantity-value {
+  @apply w-6 text-center font-semibold text-[#003049] text-sm;
+}
+
+.product-card-btn-add {
+  @apply mt-auto w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#E8A4B8] text-[#003049] font-semibold text-sm hover:bg-[#d994a8] active:scale-[0.98] transition-all;
+}
+
+.product-card-btn-add-icon {
+  @apply h-4 w-4;
+}

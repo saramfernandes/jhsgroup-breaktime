@@ -12,9 +12,9 @@ O projeto utiliza a estrutura do **Next.js 14 (App Router)**:
   - Usar `'use client'` somente quando necessário (uso de Hooks, manipulação de estado ou eventos do navegador).
 - **Componentes (`components/`)**: Elementos visuais modulares e reutilizáveis da interface.
 - **Estrutura de Componentes (.tsx)**: Para cada `.tsx`, crie uma pasta. Nela, crie 3 arquivos para separação de lógica:
-  - Um arquivo `.ts` para as interfaces/tipagem (`nome-componente.types.ts`).
-  - Um arquivo `.css` para estilização (`nome-componente.styles.css`).
-  - Um arquivo `.tsx` (`nome-componente.tsx`) que usa os outros dois.
+  - Um arquivo `.ts` para as interfaces/tipagem (`nome-componente.types.ts`, em kebab-case).
+  - Um arquivo `.css` para estilização (`nome-componente.styles.css`, em kebab-case).
+  - Um arquivo `.tsx` (`NomeComponente.tsx`, em CamelCase) que usa os outros dois.
 - **Camada de Serviços e Contexto (`lib/`)**: Centraliza as lógicas de negócio, dados estáticos (ex: catálogo de produtos) e gerenciamento de estado global via React Context API.
 
 ---

@@ -3,12 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ShoppingCart, ChevronDown } from "lucide-react";
-import { Produto } from "@/lib/produtos";
-import { useCart } from "@/lib/cart-context";
-
-interface ProductCardProps {
-  produto: Produto;
-}
+import { useCart } from "@/lib/cart-context/CartContext";
+import { ProductCardProps } from "./product-card.types";
+import "./product-card.styles.css";
 
 export default function ProductCard({ produto }: ProductCardProps) {
   const { adicionar } = useCart();
@@ -36,43 +33,43 @@ export default function ProductCard({ produto }: ProductCardProps) {
       : produto.imagem;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E5E7EB] shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
-      <div className="relative w-full aspect-[4/3] bg-white rounded-t-2xl overflow-hidden">
+    <div className="product-card">
+      <div className="product-card-image-container">
         <Image
           src={imagemAtual}
           alt={produto.nome}
           fill
-          className="object-cover"
+          className="product-card-image"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
       </div>
 
-      <div className="p-4 flex flex-col flex-1">
-        <div className="mb-2">
-          <span className="text-xs font-medium text-[#669BBC] uppercase tracking-wide">
+      <div className="product-card-body">
+        <div className="product-card-category-container">
+          <span className="product-card-category">
             {produto.categoria}
           </span>
         </div>
 
-        <h3 className="font-serif text-lg font-bold text-[#003049] mb-1">
+        <h3 className="product-card-title">
           {produto.nome}
         </h3>
 
-        <p className="text-[#003049] font-semibold text-xl mb-4">
+        <p className="product-card-price">
           {precoFormatado}
         </p>
 
         {produto.variedade && produto.variedade.length > 0 && (
-          <div className="mb-4 relative">
+          <div className="product-card-variedade-container">
             <label className="sr-only" htmlFor={`variedade-${produto.id}`}>
               Selecionar variedade
             </label>
-            <div className="relative">
+            <div className="product-card-select-wrapper">
               <select
                 id={`variedade-${produto.id}`}
                 value={variedadeSelecionada}
                 onChange={(e) => setVariedadeSelecionada(e.target.value)}
-                className="w-full appearance-none px-4 py-2.5 pr-10 rounded-xl bg-white border border-[#E5E7EB] text-[#003049] text-sm font-medium hover:border-[#669BBC] focus:border-[#669BBC] focus:outline-none focus:ring-2 focus:ring-[#669BBC]/20 transition-colors cursor-pointer"
+                className="product-card-select"
               >
                 {produto.variedade.map((v) => (
                   <option key={v} value={v}>
@@ -80,27 +77,27 @@ export default function ProductCard({ produto }: ProductCardProps) {
                   </option>
                 ))}
               </select>
-              <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#669BBC]" />
+              <ChevronDown className="product-card-select-icon" />
             </div>
           </div>
         )}
 
-        <div className="mb-3 flex items-center justify-between gap-2">
-          <span className="text-xs font-medium text-[#669BBC] uppercase tracking-wide">Quantidade</span>
-          <div className="flex items-center gap-2">
+        <div className="product-card-quantity-container">
+          <span className="product-card-quantity-label">Quantidade</span>
+          <div className="product-card-quantity-controls">
             <button
               onClick={() => setQuantidade((q) => Math.max(1, q - 1))}
-              className="w-7 h-7 rounded-full bg-gray-100 text-[#003049] font-bold hover:bg-[#E8A4B8] transition-colors flex items-center justify-center text-base leading-none"
+              className="product-card-btn-quantity"
               aria-label="Diminuir quantidade"
             >
               −
             </button>
-            <span className="w-6 text-center font-semibold text-[#003049] text-sm">
+            <span className="product-card-quantity-value">
               {quantidade}
             </span>
             <button
               onClick={() => setQuantidade((q) => q + 1)}
-              className="w-7 h-7 rounded-full bg-gray-100 text-[#003049] font-bold hover:bg-[#E8A4B8] transition-colors flex items-center justify-center text-base leading-none"
+              className="product-card-btn-quantity"
               aria-label="Aumentar quantidade"
             >
               +
@@ -110,9 +107,9 @@ export default function ProductCard({ produto }: ProductCardProps) {
 
         <button
           onClick={handleAdicionar}
-          className="mt-auto w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#E8A4B8] text-[#003049] font-semibold text-sm hover:bg-[#d994a8] active:scale-[0.98] transition-all"
+          className="product-card-btn-add"
         >
-          <ShoppingCart className="h-4 w-4" />
+          <ShoppingCart className="product-card-btn-add-icon" />
           {adicionado ? "Adicionado ✓" : "Adicionar ao Carrinho"}
         </button>
       </div>

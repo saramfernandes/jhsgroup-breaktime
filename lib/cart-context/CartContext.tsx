@@ -2,26 +2,8 @@
 
 import { createContext, useContext, useState, ReactNode } from "react";
 import { Produto } from "@/lib/produtos";
-
-interface ItemCarrinho {
-  produto: Produto;
-  variedade: string | null;
-  quantidade: number;
-}
-
-interface CartContextType {
-  itens: ItemCarrinho[];
-  adicionar: (produto: Produto, variedade?: string, quantidade?: number) => void;
-  remover: (produtoId: number, variedade?: string | null) => void;
-  atualizarQuantidade: (
-    produtoId: number,
-    variedade: string | null,
-    quantidade: number
-  ) => void;
-  limpar: () => void;
-  total: number;
-  totalItens: number;
-}
+import { ItemCarrinho, CartContextType } from "./cart-context.types";
+import "./cart-context.styles.css";
 
 const CartContext = createContext<CartContextType | null>(null);
 

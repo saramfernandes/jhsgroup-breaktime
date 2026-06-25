@@ -29,3 +29,47 @@
 .header-cart-badge {
   @apply absolute -top-0.5 -right-0.5 bg-[#FF3669] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center leading-none;
 }
+
+.header-left {
+  @apply flex items-center gap-2;
+}
+
+.header-sazonal-btn {
+  @apply w-4 h-8 opacity-0 cursor-pointer bg-transparent border-none p-0;
+}
+
+.header-sazonal-overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/40;
+}
+
+.header-sazonal-modal {
+  @apply bg-[#FFF9EE] rounded-xl shadow-xl w-full max-w-sm mx-4 overflow-hidden;
+}
+
+.header-sazonal-modal-header {
+  @apply flex items-center justify-between px-6 py-4 border-b border-[#FDF0D5];
+}
+
+.header-sazonal-modal-title {
+  @apply font-serif text-lg font-bold text-[#003049];
+}
+
+.header-sazonal-modal-close {
+  @apply p-1 rounded-full hover:bg-[#FDF0D5] text-[#669BBC] transition-colors;
+}
+
+.header-sazonal-modal-body {
+  @apply px-6 py-5 flex flex-col gap-4;
+}
+
+.header-sazonal-modal-label {
+  @apply text-sm font-medium text-[#003049];
+}
+
+.header-sazonal-modal-select {
+  @apply w-full px-3 py-2 border border-[#669BBC] rounded-lg bg-white text-[#003049] text-sm focus:outline-none focus:ring-2 focus:ring-[#669BBC] focus:border-transparent;
+}
+
+.header-sazonal-modal-reset {
+  @apply w-full px-4 py-2 bg-[#003049] text-white text-sm font-medium rounded-lg hover:bg-[#00223a] transition-colors;
+}

@@ -6,6 +6,7 @@ export interface Produto {
   variedade?: string[];
   imagem: string;
   imagensVariedade?: Record<string, string>;
+  sazonal?: string[];
 }
 
 export const produtos: Produto[] = [
@@ -20,6 +21,7 @@ export const produtos: Produto[] = [
       Chocolate: "assets/produtos/bolochocolate.png",
       Morango: "assets/produtos/bolomorango.png",
     },
+    sazonal: ["natal", "pascoa", "dia-das-maes"],
   },
   {
     id: 2,
@@ -28,6 +30,7 @@ export const produtos: Produto[] = [
     preco: 12.0,
     variedade: ["Brigadeiro", "Beijinho", "Casadinho"],
     imagem: "assets/produtos/doces.png",
+    sazonal: ["natal", "pascoa", "dia-das-maes", "festa-junina"],
   },
   {
     id: 3,
@@ -42,6 +45,7 @@ export const produtos: Produto[] = [
     categoria: "Confeitaria",
     preco: 10.0,
     imagem: "/assets/produtos/brownie.png",
+    sazonal: ["natal", "pascoa"],
   },
   {
     id: 5,
@@ -49,6 +53,7 @@ export const produtos: Produto[] = [
     categoria: "Bebidas",
     preco: 14.0,
     imagem: "/assets/produtos/capuccino.png",
+    sazonal: ["inverno"],
   },
   {
     id: 6,
@@ -56,6 +61,7 @@ export const produtos: Produto[] = [
     categoria: "Bebidas",
     preco: 16.0,
     imagem: "/assets/produtos/chocolatequente.png",
+    sazonal: ["inverno", "natal"],
   },
   {
     id: 7,
@@ -63,6 +69,7 @@ export const produtos: Produto[] = [
     categoria: "Confeitaria",
     preco: 18.0,
     imagem: "/assets/produtos/cucadocedeleite.png",
+    sazonal: ["inverno", "natal", "festa-junina"],
   },
   {
     id: 8,
@@ -70,6 +77,7 @@ export const produtos: Produto[] = [
     categoria: "Bebidas",
     preco: 15.0,
     imagem: "/assets/produtos/mocaccino.png",
+    sazonal: ["inverno"],
   },
   {
     id: 9,
@@ -77,5 +85,6 @@ export const produtos: Produto[] = [
     categoria: "Bebidas",
     preco: 7.0,
     imagem: "assets/produtos/cafeexpresso.png",
+    sazonal: ["inverno"],
   },
 ];

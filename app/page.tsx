@@ -29,7 +29,7 @@ export default function Home({ searchParams }: HomeProps) {
         <section className="mb-12">
           <div className="text-center mb-6">
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#003049] mb-2">
-              Destaques da Temporada
+              Diamantes da Temporada
             </h2>
             <p className="text-[#669BBC] text-base sm:text-lg">
               {nomeTemporada}

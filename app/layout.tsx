@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header/Header";
+import HeaderWithSuspense from "@/components/header/HeaderWithSuspense";
 import Footer from "@/components/footer/Footer";
 import { CartProvider } from "@/lib/cart-context/CartContext";
 
@@ -33,7 +33,7 @@ export default function RootLayout({
         className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-[#FDF0D5] min-h-screen flex flex-col`}
       >
         <CartProvider>
-          <Header />
+          <HeaderWithSuspense />
           <main className="flex-1">{children}</main>
           <Footer />
         </CartProvider>
